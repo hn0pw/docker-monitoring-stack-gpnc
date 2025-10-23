@@ -152,19 +152,6 @@ services:
       <<: *default-labels
     logging: *default-logging
 
-  redis:
-    image: redis:${REDIS_VERSION:-6}
-    container_name: redis
-    ports:
-      - 6379:6379
-    cpus: 0.5
-    mem_limit: 512m
-    networks:
-      - monitoring
-    labels:
-      <<: *default-labels
-    logging: *default-logging
-
   loki:
     image: grafana/loki:3.3.2
     container_name: loki
